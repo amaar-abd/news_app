@@ -31,7 +31,7 @@ class _SpalshViewBodyState extends State<SpalshViewBody> {
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey,
-                  blurRadius: 20,
+                  blurRadius: 10,
                   spreadRadius: 2,
                   offset: const Offset(0, 15),
                 ),
@@ -79,7 +79,7 @@ class _SpalshViewBodyState extends State<SpalshViewBody> {
 
   void navigateToNextScreen() async {
     await Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushNamed(context, AppRoutes.homeView);
+      Navigator.pushNamed(context, AppRoutes.onBoardingView);
     });
   }
 }
