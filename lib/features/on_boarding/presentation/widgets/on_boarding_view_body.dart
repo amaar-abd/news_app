@@ -112,7 +112,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
     } else {
       return MainButton(
         onPressed: () {
-          Navigator.pushNamed(context, AppRoutes.homeView);
+          Navigator.pushNamed(context, AppRoutes.signUpView);
         },
         text: 'Get Started',
       );

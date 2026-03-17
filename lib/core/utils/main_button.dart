@@ -7,11 +7,14 @@ class MainButton extends StatelessWidget {
     super.key,
     required this.onPressed,
     required this.text,
-    this.isVisible = true,
+   
+    this.isVisible = true, 
+    this.fontWeight,
   });
   final VoidCallback onPressed;
   final String text;
   final bool isVisible;
+  final FontWeight? fontWeight;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +37,7 @@ class MainButton extends StatelessWidget {
               text,
               style: GoogleFonts.cairo(
                 fontSize: 20,
-                fontWeight: FontWeight.bold,
+                fontWeight: fontWeight,
                 color: Colors.white,
               ),
            
