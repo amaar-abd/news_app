@@ -26,7 +26,7 @@ class CustomTextFormField extends StatelessWidget {
           title,
           style: GoogleFonts.cairo(fontSize: 16, fontWeight: FontWeight.w700),
         ),
-        SizedBox(height: 7),
+        SizedBox(height: 8),
 
         DecoratedBox(
           decoration: BoxDecoration(

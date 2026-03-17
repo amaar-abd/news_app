@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/core/routing/app_routes.dart';
 import 'package:news_app/core/utils/main_button.dart';
 import 'package:news_app/features/auth/presentation/widgets/custom_checkbox_row.dart';
 import 'package:news_app/features/auth/presentation/widgets/custom_text_form_field.dart';
@@ -84,7 +85,16 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 fontWeight: FontWeight.w600,
               ),
               SizedBox(height: 20),
-              UserQuestionRow(ask: 'Already have an account? ', answer: 'Login')
+
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoutes.signInView);
+                },
+                child: UserQuestionRow(
+                  ask: 'Already have an account? ',
+                  answer: 'Login',
+                ),
+              ),
             ],
           ),
         ),

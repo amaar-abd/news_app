@@ -63,14 +63,12 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                     ? AppColors.primaryColors
                     : Colors.blue[100],
                 activeSize: Size(25, 10),
-                size:Size(25, 10) ,
-              shape:  RoundedRectangleBorder(
+                size: Size(25, 10),
+                shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
-                  
                 ),
                 activeShape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
-                  
                 ),
               ),
             ),
@@ -83,12 +81,17 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
           right: 0,
           child: Padding(
             padding: const EdgeInsets.only(right: 10),
-            child: Text(
-              'Skip',
-              style: GoogleFonts.cairo(
-                color: AppColors.primaryColors,
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
+            child: InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, AppRoutes.signInView);
+              },
+              child: Text(
+                'Skip',
+                style: GoogleFonts.cairo(
+                  color: AppColors.primaryColors,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
               ),
             ),
           ),
@@ -112,7 +115,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
     } else {
       return MainButton(
         onPressed: () {
-          Navigator.pushNamed(context, AppRoutes.signUpView);
+          Navigator.pushNamed(context, AppRoutes.signInView);
         },
         text: 'Get Started',
       );
