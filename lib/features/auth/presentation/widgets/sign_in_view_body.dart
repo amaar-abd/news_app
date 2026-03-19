@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:news_app/core/routing/app_routes.dart';
 import 'package:news_app/core/utils/app_iamges.dart';
-import 'package:news_app/core/utils/main_button.dart';
 import 'package:news_app/features/auth/presentation/widgets/accounts_button.dart';
 import 'package:news_app/features/auth/presentation/widgets/custom_text_form_field.dart';
 import 'package:news_app/features/auth/presentation/widgets/divider_signup_widget.dart';
+import 'package:news_app/features/auth/presentation/widgets/signin_button_blocconsumer.dart';
 import 'package:news_app/features/auth/presentation/widgets/top_head_line_auth_widget.dart';
 import 'package:news_app/features/auth/presentation/widgets/user_question_row.dart';
 
@@ -16,14 +15,18 @@ class SignInViewBody extends StatefulWidget {
   State<SignInViewBody> createState() => _SignInViewBodyState();
 }
 
-final TextEditingController emailController = TextEditingController();
-final TextEditingController passwordController = TextEditingController();
-bool _isObscure = true;
-
 class _SignInViewBodyState extends State<SignInViewBody> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+
+  bool _isObscure = true;
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: _globalKey,
+      autovalidateMode: autovalidateMode,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: SingleChildScrollView(
@@ -62,10 +65,15 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                 children: [UserQuestionRow(answer: 'Forgot Password ? ')],
               ),
               SizedBox(height: 20),
-              MainButton(
-                onPressed: () {},
-                text: 'LOGIN',
-                fontWeight: FontWeight.w600,
+              SignInButtonBlocconsumer(
+                emailController: emailController,
+                passwordController: passwordController,
+                globalKey: _globalKey,
+                onValidationError: () {
+                  setState(() {
+                    autovalidateMode = AutovalidateMode.always;
+                  });
+                },
               ),
               SizedBox(height: 25),
               DividerSignupWidget(),

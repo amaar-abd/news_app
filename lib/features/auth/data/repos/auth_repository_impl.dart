@@ -30,4 +30,22 @@ class AuthRepositoryImpl implements AuthRepository {
       return left(ServerFailure(e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, UserEntityData>> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    User? user;
+    try {
+      user = await fireBaseAuthServices.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      //
+      return right(UserEntityData(user.displayName!, email, user.uid));
+    } catch (e) {
+      return left(Failure(e.toString()));
+    }
+  }
 }

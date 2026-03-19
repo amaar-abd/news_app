@@ -9,5 +9,8 @@ abstract class AuthRepository {
     required String password,
   });
 
-
+  Future<Either<Failure, UserEntityData>> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  });
 }
