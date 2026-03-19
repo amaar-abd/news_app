@@ -1,15 +1,15 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:news_app/core/dependency_injection/service_locator.dart';
 import 'package:news_app/core/routing/app_routes.dart';
 import 'package:news_app/core/routing/route_generator.dart';
 import 'package:news_app/core/theme/app_theme.dart';
 import 'package:news_app/firebase_options.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  sutupServiceLocator();
   runApp(const NwesApp());
 }
 
@@ -20,7 +20,7 @@ class NwesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      onGenerateRoute:RouteGenerator.onGenerateRoute,
+      onGenerateRoute: RouteGenerator.onGenerateRoute,
       theme: AppTheme.mainTheme,
       initialRoute: AppRoutes.splashView,
     );

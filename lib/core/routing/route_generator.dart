@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/routing/app_routes.dart';
-import 'package:news_app/features/auth/presentation/views/sign_in_view.dart';
-import 'package:news_app/features/auth/presentation/views/sign_up_view.dart';
+import 'package:news_app/features/auth/presentation/views/signin_view.dart';
+import 'package:news_app/features/auth/presentation/views/signup_view.dart';
 import 'package:news_app/features/home/presentation/views/home_view.dart';
 import 'package:news_app/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:news_app/features/splash/presentation/views/splash_view.dart';

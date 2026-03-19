@@ -6,15 +6,17 @@ class MainButton extends StatelessWidget {
   const MainButton({
     super.key,
     required this.onPressed,
-    required this.text,
+     this.text,
    
     this.isVisible = true, 
-    this.fontWeight,
+    this.fontWeight, 
+    this.widget,
   });
-  final VoidCallback onPressed;
-  final String text;
+  final VoidCallback? onPressed;
+  final String? text;
   final bool isVisible;
   final FontWeight? fontWeight;
+  final Widget? widget;
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +32,11 @@ class MainButton extends StatelessWidget {
             style: TextButton.styleFrom(
               backgroundColor: AppColors.primaryColors,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadiusGeometry.circular(16),
+                borderRadius: BorderRadius.circular(16),
               ),
             ),
-            child: Text(
-              text,
+            child: widget ?? Text(
+              text??'',
               style: GoogleFonts.cairo(
                 fontSize: 20,
                 fontWeight: fontWeight,

@@ -37,14 +37,15 @@ class CustomTextFormField extends StatelessWidget {
             obscureText: obscureText ?? true,
             controller: controller,
             validator: (value) =>
-                value == null || value.isEmpty ? 'cant bd empty' : null,
+                value == null || value.isEmpty ? 'cant be empty' : null,
             decoration: InputDecoration(
               filled: true,
               fillColor: Colors.white,
               suffixIcon: icon,
-              hint: Text(
-                hintText,
-                style: GoogleFonts.cairo(fontSize: 15, color: Colors.grey[500]),
+              hintText: hintText,
+              hintStyle: GoogleFonts.cairo(
+                fontSize: 15,
+                color: Colors.grey[500],
               ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16),

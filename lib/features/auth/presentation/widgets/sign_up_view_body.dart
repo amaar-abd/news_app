@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/routing/app_routes.dart';
-import 'package:news_app/core/utils/main_button.dart';
 import 'package:news_app/features/auth/presentation/widgets/custom_checkbox_row.dart';
 import 'package:news_app/features/auth/presentation/widgets/custom_text_form_field.dart';
+import 'package:news_app/features/auth/presentation/widgets/signup_button_blocconsumer.dart';
 import 'package:news_app/features/auth/presentation/widgets/top_head_line_auth_widget.dart';
 import 'package:news_app/features/auth/presentation/widgets/user_question_row.dart';
 
@@ -13,13 +13,17 @@ class SignUpViewBody extends StatefulWidget {
   State<SignUpViewBody> createState() => _SignUpViewBodyState();
 }
 
-final TextEditingController nameController = TextEditingController();
-final TextEditingController emailController = TextEditingController();
-final TextEditingController passwordController = TextEditingController();
-bool _isObscure = true;
-bool _isAccepted = false;
+
 
 class _SignUpViewBodyState extends State<SignUpViewBody> {
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+
+  bool _isObscure = true;
+  bool _isAccepted = false;
   @override
   void dispose() {
     super.dispose();
@@ -31,6 +35,8 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: _formKey,
+      autovalidateMode: autovalidateMode,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: SingleChildScrollView(
@@ -45,12 +51,14 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 title: 'Full Name',
                 hintText: 'ammar abd',
                 icon: null,
+                obscureText: false,
                 controller: nameController,
               ),
               CustomTextFormField(
                 title: 'Email Address',
                 hintText: 'Entry your email',
                 icon: null,
+                obscureText: false,
                 controller: emailController,
               ),
               CustomTextFormField(
@@ -79,13 +87,20 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 },
               ),
               SizedBox(height: 50),
-              MainButton(
-                onPressed: () {},
-                text: 'CREATE ACCOUNT',
-                fontWeight: FontWeight.w600,
+              SignUpButtonBlocConsumer(
+                nameController: nameController,
+                emailController: emailController,
+                passwordController: passwordController,
+                formKey: _formKey,
+                isAccepted: _isAccepted,
+                onValidationError: () {
+                  setState(() {
+                  autovalidateMode = AutovalidateMode.always;
+                  });
+                },
               ),
-              SizedBox(height: 20),
 
+              SizedBox(height: 20),
               InkWell(
                 onTap: () {
                   Navigator.pushNamed(context, AppRoutes.signInView);
