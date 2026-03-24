@@ -12,6 +12,13 @@ class WebServices {
       receiveTimeout: Duration(seconds: 30),
     );
     dio = Dio(baseOptions);
+    dio.interceptors.add(LogInterceptor(
+    request: true,         
+    requestHeader: true,   
+    requestBody: true,     
+    responseBody: true,    
+    error: true,           
+  ));
   }
 
   Future<Map<String,dynamic>> getData(

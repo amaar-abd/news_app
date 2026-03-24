@@ -13,7 +13,7 @@ class DioErrorHandler {
         return _handleStatusCode(e.response?.statusCode);
 
       default:
-        return 'Unecpected error';
+        return 'Unecpected error : ${e.message}';
     }
   }
 
