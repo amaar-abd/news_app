@@ -3,6 +3,7 @@ import 'package:news_app/features/home/data/models/source_model.dart';
 class ArticleEntity {
   final Source? source;
   final String? title;
+  final String? author;
   final String? description;
   final String? urlToImage;
   final String? publishedAt;
@@ -12,6 +13,7 @@ class ArticleEntity {
     this.source,
     this.title,
     this.description,
+    this.author,
     this.urlToImage,
     this.publishedAt,
     this.content,

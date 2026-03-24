@@ -40,6 +40,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
               CustomTextFormField(
                 title: 'Email',
                 hintText: 'Entry your email',
+                obscureText: false,
                 icon: Icon(Icons.email),
                 controller: emailController,
               ),

@@ -42,8 +42,8 @@ class AuthRepositoryImpl implements AuthRepository {
         email: email,
         password: password,
       );
-      //
-      return right(UserEntityData(user.displayName!, email, user.uid));
+      
+      return right(UserEntityData(user.displayName??'', email, user.uid));
     } catch (e) {
       return left(Failure(e.toString()));
     }

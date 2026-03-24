@@ -15,7 +15,7 @@ class EverythingParams {
     this.page,
   );
 
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> toMapEverything() {
     return {
       'q': q,
       'searchln': searchln,

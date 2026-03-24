@@ -49,14 +49,16 @@ class FireBaseAuthServices {
       return credential.user!;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-       throw CustomException(message: 'No user found for that email.');
+        throw CustomException(message: 'No user found for that email.');
       } else if (e.code == 'wrong-password') {
-      throw  CustomException(message: 'Wrong password provided for that user.');
-      }else{
-        throw  CustomException(message: '');
+        throw CustomException(
+          message: 'Wrong password provided for that user.',
+        );
+      } else {
+        throw CustomException(message: e.toString());
       }
     } catch (e) {
-     throw CustomException(message: e.toString());
+      throw CustomException(message: e.toString());
     }
   }
 }

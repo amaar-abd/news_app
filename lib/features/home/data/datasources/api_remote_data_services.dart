@@ -12,12 +12,13 @@ class ApiRemoteDataServices {
     TopHeadlinesParams params,
   ) async {
     final result = await webServices.getData(path, params.toMap());
+    
     final ApiResponse apiResponse = ApiResponse.fromJson(result);
     return apiResponse;
   }
 
-  Future<ApiResponse> getAllNews(String path,EverythingParams params) async {
-   final result = await webServices.getData(path, params.toMap());
+  Future<ApiResponse> getAllNews(String path, EverythingParams params) async {
+    final result = await webServices.getData(path, params.toMapEverything());
     final ApiResponse apiResponse = ApiResponse.fromJson(result);
     return apiResponse;
   }

@@ -16,8 +16,8 @@ class NewsRepositoryImpl implements NewsRepository {
   Future<Either<Failure, List<ArticleEntity>>> topHeadlineNews() async {
     final TopHeadlinesParams topHeadlinesParams = TopHeadlinesParams(
       country: 'us',
-      category: 'business',
-      page: 7,
+      category: 'general',
+      pageSize: 10
     );
     try {
       final result = await apiRemoteDataServices.getTopHeadLine(

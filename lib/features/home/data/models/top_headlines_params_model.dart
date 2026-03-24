@@ -6,7 +6,7 @@ class TopHeadlinesParams {
   final int? page;
 
   TopHeadlinesParams({
-   required this.country ,
+    required this.country,
     this.category,
     this.sources,
     this.pageSize,
@@ -14,12 +14,21 @@ class TopHeadlinesParams {
   });
 
   Map<String, dynamic> toMap() {
-    return {
-      'country': country,
-      'category': category,
-      'sources': sources,
-      'pageSize': pageSize,
-      'page': page,
-    };
+    final results = <String, dynamic>{};
+    results.addAll({'country': country});
+    
+    if (category != null) {
+      results.addAll({'category': category});
+    }
+    if (sources != null) {
+      results.addAll({'sources': sources});
+    }
+    if (pageSize != null) {
+      results.addAll({'pageSize': pageSize});
+    }
+    if (page != null) {
+      results.addAll({'page': page});
+    }
+    return results;
   }
 }

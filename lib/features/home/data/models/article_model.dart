@@ -7,6 +7,8 @@ class ArticleModel {
   final String? description;
   final String? urlToImage;
   final String? publishedAt;
+  final String? author;
+
   final String? content;
 
   const ArticleModel(
@@ -16,16 +18,18 @@ class ArticleModel {
     this.urlToImage,
     this.publishedAt,
     this.content,
+    this.author,
   );
 
   factory ArticleModel.fromJson(Map<String, dynamic> json) {
     return ArticleModel(
-      Source.fromJson(json),
+      Source.fromJson(json['source']),
       json['title'],
       json['description'],
       json['urlToImage'],
       json['publishedAt'],
       json['content'],
+      json['author'],
     );
   }
 
@@ -34,6 +38,7 @@ class ArticleModel {
       source,
       title,
       description,
+      author,
       urlToImage,
       publishedAt,
       content,
