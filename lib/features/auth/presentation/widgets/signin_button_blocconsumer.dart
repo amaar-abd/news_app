@@ -21,14 +21,16 @@ class SignInButtonBlocconsumer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignInCubit, SignInState>(
+
       listener: (context, state) {
+         
         if (state is SignInSuccess) {
           buildsnakBar(
             context,
             message: 'Login Success',
             color: AppColors.primaryColors,
           );
-          Navigator.pushNamed(context, AppRoutes.homeView);
+          Navigator.pushNamed(context, AppRoutes.rootView);
         } else if (state is SignInFailure) {
           buildsnakBar(
             context,
