@@ -6,23 +6,35 @@ class EverythingParams {
   final int? pageSize;
   final int? page;
 
-  const EverythingParams(
-    this.q,
+   EverythingParams(
+   { this.q,
     this.searchln,
     this.language,
     this.sortBy,
     this.pageSize,
-    this.page,
+    this.page,}
   );
 
   Map<String, dynamic> toMapEverything() {
-    return {
-      'q': q,
-      'searchln': searchln,
-      'language': language,
-      'sortBy': sortBy,
-      'pageSize': pageSize,
-      'page': page,
-    };
+    final result = <String, dynamic>{};
+    if (q != null) {
+      result.addAll({'q': q});
+    }
+    if (searchln != null) {
+      result.addAll({'searchln': searchln});
+    }
+    if (language != null) {
+      result.addAll({'language': language});
+    }
+    if (sortBy != null) {
+      result.addAll({'sortBy': sortBy});
+    }
+    if (pageSize != null) {
+      result.addAll({'pageSize': pageSize});
+    }
+    if (page != null) {
+      result.addAll({'page': page});
+    }
+    return result;
   }
 }

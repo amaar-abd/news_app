@@ -15,4 +15,15 @@ class NewsCubit extends Cubit<NewsState> {
       (r) => emit(TopheadlineSuccess(r)),
     );
   }
+
+  Future<void> allNews() async {
+    emit(AllNewsLoading());
+    final result = await repository.everythingNews();
+    result.fold(
+      (l) => emit(AllNewsFailure(l.message)),
+      (r) => emit(AllNewsSuccess(r)),
+    );
+  }
+
+
 }

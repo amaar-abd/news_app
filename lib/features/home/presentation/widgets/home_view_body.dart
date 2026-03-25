@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/features/home/presentation/widgets/bloc_builder_all_news.dart';
 import 'package:news_app/features/home/presentation/widgets/bloc_builder_topheadline.dart';
 import 'package:news_app/features/home/presentation/widgets/custom_appbar.dart';
 import 'package:news_app/features/home/presentation/widgets/top_headline_row.dart';
@@ -19,6 +20,9 @@ class HomeViewBody extends StatelessWidget {
           BlocbuilderTopheadline(),
           SizedBox(height: 20),
           TopHeadlineRow(title: 'Recommendation', subTitle: 'View All'),
+          SizedBox(height: 20),
+          BlocBuilderAllNews(),
+
         ],
       ),
     );

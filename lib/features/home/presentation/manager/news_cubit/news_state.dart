@@ -17,3 +17,18 @@ final class TopheadlineFailure extends NewsState {
 
   TopheadlineFailure(this.message);
 }
+
+
+final class AllNewsLoading extends NewsState {}
+
+final class AllNewsSuccess extends NewsState {
+  final List<ArticleEntity> articlesList;
+
+  AllNewsSuccess(this.articlesList);
+}
+
+final class AllNewsFailure extends NewsState {
+  final String message;
+
+  AllNewsFailure(this.message);
+}
