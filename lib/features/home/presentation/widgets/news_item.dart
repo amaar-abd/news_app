@@ -13,8 +13,8 @@ class NewsItem extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          height: 120,
-          width: 120,
+          height: 130,
+          width: 130,
           child: DecoratedBox(
             decoration: BoxDecoration(
               boxShadow: [
@@ -40,57 +40,58 @@ class NewsItem extends StatelessWidget {
           ),
         ),
         SizedBox(width: 10),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              article.source!.name ?? '',
-              style: GoogleFonts.cairo(
-                color: AppColors.secondColors,
-                fontSize: 12,
-              ),
-            ),
-            SizedBox(height: 7),
-            SizedBox(
-              width: 250,
-              child: Text(
-                article.title ?? '',
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                article.source!.name ?? '',
                 style: GoogleFonts.cairo(
-                  color: Colors.black,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+                  color: AppColors.secondColors,
+                  fontSize: 12,
                 ),
               ),
-            ),
-            SizedBox(height: 7),
+              SizedBox(height: 7),
+              SizedBox(
+                width: 250,
+                child: Text(
+                  article.title ?? '',
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: GoogleFonts.cairo(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              SizedBox(height: 7),
 
-            Row(
-              children: [
-                Text(
-                  (article.author ?? '').trim().split(' ').take(2).join(' '),
-                  style: GoogleFonts.cairo(
-                    color: AppColors.secondColors,
-                    fontSize: 12,
-                    
+              Row(
+                children: [
+                  Text(
+                    (article.author ?? '').trim().split(' ').take(2).join(' '),
+                    style: GoogleFonts.cairo(
+                      color: AppColors.secondColors,
+                      fontSize: 12,
+                    ),
                   ),
-                ),
-                SizedBox(width: 10),
-                Text(
-                  article.publishedAt!
-                      .substring(0, 10)
-                      .split('-')
-                      .reversed
-                      .join('-'),
-                  style: GoogleFonts.cairo(
-                    color: AppColors.secondColors,
-                    fontSize: 12,
+                  SizedBox(width: 10),
+                  Text(
+                    article.publishedAt!
+                        .substring(0, 10)
+                        .split('-')
+                        .reversed
+                        .join('-'),
+                    style: GoogleFonts.cairo(
+                      color: AppColors.secondColors,
+                      fontSize: 12,
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ],
     );

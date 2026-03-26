@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/core/constants/app_colors.dart';
+import 'package:news_app/core/routing/app_routes.dart';
 import 'package:news_app/core/utils/app_iamges.dart';
 import 'package:news_app/features/home/domain/entities/article_entity.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -43,17 +44,28 @@ class _HomeCarouselSliderState extends State<HomeCarouselSlider> {
                 borderRadius: BorderRadius.circular(16),
                 child: Stack(
                   children: [
-                    CachedNetworkImage(
-                      imageUrl: widget.articleEntity[index].urlToImage ?? '',
-                      fit: BoxFit.cover,
-                      width: double.infinity,
-                      placeholder: (context, url) => Container(
-                        color: Colors.grey[200],
-                        child: const Center(child: CircularProgressIndicator()),
-                      ),
-                      errorWidget: (context, url, error) => Image.asset(
-                        Assets.assetsImagesNoImage,
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context,rootNavigator: true).pushNamed(
+                          
+                          AppRoutes.detailsView,
+                          arguments: widget.articleEntity[index],
+                        );
+                      },
+                      child: CachedNetworkImage(
+                        imageUrl: widget.articleEntity[index].urlToImage ?? '',
                         fit: BoxFit.cover,
+                        width: double.infinity,
+                        placeholder: (context, url) => Container(
+                          color: Colors.grey[200],
+                          child: const Center(
+                            child: CircularProgressIndicator(color: AppColors.primaryColors),
+                          ),
+                        ),
+                        errorWidget: (context, url, error) => Image.asset(
+                          Assets.assetsImagesNoImage,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     Positioned(

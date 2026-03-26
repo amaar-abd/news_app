@@ -13,7 +13,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: BlocProvider(
-          create: (context) => NewsCubit(getIt.get<NewsRepository>())..topHeadlineNews(),
+          create: (context) => NewsCubit(getIt.get<NewsRepository>())..topHeadlineNews()..allNews(),
           child: HomeViewBody(),
         ),
       ),

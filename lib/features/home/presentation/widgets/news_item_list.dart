@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/core/routing/app_routes.dart';
 import 'package:news_app/features/home/domain/entities/article_entity.dart';
 import 'package:news_app/features/home/presentation/widgets/news_item.dart';
 
@@ -13,7 +14,11 @@ class NewsItemList extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.only(bottom: 14),
-            child: NewsItem(article: article[index]),
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context,rootNavigator: true).pushNamed(AppRoutes.detailsView,arguments: article[index]);
+              },
+              child: NewsItem(article: article[index])),
           );
         },
       ),
