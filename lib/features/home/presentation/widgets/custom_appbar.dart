@@ -10,7 +10,7 @@ class CustomAppbar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        //bars
+        
         CustomIconButton(icon: FontAwesomeIcons.barsStaggered, onTap: () {}),
 
         Row(
