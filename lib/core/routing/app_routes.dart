@@ -5,5 +5,6 @@ class AppRoutes {
   static const String signInView = 'SignInView';
   static const String rootView = 'RootView';
   static const String detailsView = 'DetailsView';
+  static const String searchView = 'SearchView';
   
 }

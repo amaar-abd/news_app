@@ -3,9 +3,10 @@ import 'package:news_app/core/presentation/root_view.dart';
 import 'package:news_app/core/routing/app_routes.dart';
 import 'package:news_app/features/auth/presentation/views/signin_view.dart';
 import 'package:news_app/features/auth/presentation/views/signup_view.dart';
-import 'package:news_app/features/home/domain/entities/article_entity.dart';
+import 'package:news_app/core/entites/article_entity.dart';
 import 'package:news_app/features/home/presentation/views/details_view.dart';
 import 'package:news_app/features/on_boarding/presentation/views/on_boarding_view.dart';
+import 'package:news_app/features/search/presentation/views/search_view.dart';
 import 'package:news_app/features/splash/presentation/views/splash_view.dart';
 
 class RouteGenerator {
@@ -26,7 +27,8 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (context) => DetailsView(article: article),
         );
-
+        case AppRoutes.searchView:
+        return MaterialPageRoute(builder: (context) => SearchView());
       default:
         return MaterialPageRoute(
           builder: (context) => Scaffold(
