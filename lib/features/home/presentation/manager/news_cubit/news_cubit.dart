@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/features/home/domain/entities/article_entity.dart';
+import 'package:news_app/core/entites/article_entity.dart';
 import 'package:news_app/features/home/domain/repo/news_repository.dart';
 part 'news_state.dart';
 
@@ -18,7 +18,7 @@ class NewsCubit extends Cubit<NewsState> {
 
   Future<void> allNews() async {
     emit(AllNewsLoading());
-    final result = await repository.everythingNews();
+    final result = await repository.fetchEverything(query: 'sports');
     result.fold(
       (l) => emit(AllNewsFailure(l.message)),
       (r) => emit(AllNewsSuccess(r)),

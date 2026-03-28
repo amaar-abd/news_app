@@ -1,4 +1,4 @@
-import 'package:news_app/features/home/data/models/article_model.dart';
+import 'package:news_app/core/models/article_model.dart';
 
 class ApiResponse {
   final String status;

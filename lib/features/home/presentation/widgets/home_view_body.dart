@@ -22,7 +22,7 @@ class HomeViewBody extends StatelessWidget {
           TopHeadlineRow(title: 'Recommendation', subTitle: 'View All'),
           SizedBox(height: 20),
           BlocBuilderAllNews(),
-
+          
         ],
       ),
     );

@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/core/constants/app_colors.dart';
 import 'package:news_app/core/routing/app_routes.dart';
 import 'package:news_app/core/utils/app_iamges.dart';
-import 'package:news_app/features/home/domain/entities/article_entity.dart';
+import 'package:news_app/core/entites/article_entity.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeCarouselSlider extends StatefulWidget {

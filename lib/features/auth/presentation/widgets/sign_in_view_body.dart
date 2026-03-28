@@ -41,14 +41,14 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                 title: 'Email',
                 hintText: 'Entry your email',
                 obscureText: false,
-                icon: Icon(Icons.email),
+                suffixIcon: Icon(Icons.email),
                 controller: emailController,
               ),
               CustomTextFormField(
                 title: 'Password',
                 hintText: 'Enter your password ',
                 obscureText: _isObscure,
-                icon: InkWell(
+                suffixIcon: InkWell(
                   onTap: () {
                     setState(() {
                       _isObscure = !_isObscure;

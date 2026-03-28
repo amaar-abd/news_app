@@ -1,4 +1,4 @@
-import 'package:news_app/features/home/data/models/source_model.dart';
+import 'package:news_app/core/models/source_model.dart';
 
 class ArticleEntity {
   final Source? source;

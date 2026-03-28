@@ -5,15 +5,17 @@ import 'package:news_app/core/constants/app_colors.dart';
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
-    required this.title,
+     this.title,
     required this.hintText,
     required this.controller,
     this.obscureText,
-    this.icon,
+    this.suffixIcon,
+    this.prefixIcon,
   });
-  final String title;
+  final String? title;
   final String hintText;
-  final Widget? icon;
+  final Widget? suffixIcon;
+  final Widget?           prefixIcon;
   final bool? obscureText;
   final TextEditingController controller;
 
@@ -23,7 +25,7 @@ class CustomTextFormField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          title,
+          title??'',
           style: GoogleFonts.cairo(fontSize: 16, fontWeight: FontWeight.w700),
         ),
         SizedBox(height: 8),
@@ -41,7 +43,8 @@ class CustomTextFormField extends StatelessWidget {
             decoration: InputDecoration(
               filled: true,
               fillColor: Colors.white,
-              suffixIcon: icon,
+              suffixIcon: suffixIcon,
+              prefixIcon:prefixIcon ,
               hintText: hintText,
               hintStyle: GoogleFonts.cairo(
                 fontSize: 15,

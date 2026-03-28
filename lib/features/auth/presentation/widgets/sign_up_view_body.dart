@@ -50,14 +50,14 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
               CustomTextFormField(
                 title: 'Full Name',
                 hintText: 'ammar abd',
-                icon: null,
+            
                 obscureText: false,
                 controller: nameController,
               ),
               CustomTextFormField(
                 title: 'Email Address',
                 hintText: 'Entry your email',
-                icon: null,
+           
                 obscureText: false,
                 controller: emailController,
               ),
@@ -65,7 +65,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 title: 'Password',
                 hintText: 'Choose a strong password ',
                 obscureText: _isObscure,
-                icon: InkWell(
+                suffixIcon: InkWell(
                   onTap: () {
                     setState(() {
                       _isObscure = !_isObscure;

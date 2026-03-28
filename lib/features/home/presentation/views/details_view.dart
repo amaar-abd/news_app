@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/features/home/domain/entities/article_entity.dart';
+import 'package:news_app/core/entites/article_entity.dart';
 import 'package:news_app/features/home/presentation/widgets/details_view_body.dart';
 
 class DetailsView extends StatelessWidget {

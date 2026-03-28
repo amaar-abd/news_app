@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/core/constants/app_colors.dart';
 import 'package:news_app/core/utils/app_iamges.dart';
-import 'package:news_app/features/home/domain/entities/article_entity.dart';
+import 'package:news_app/core/entites/article_entity.dart';
 
 class NewsItem extends StatelessWidget {
   const NewsItem({super.key, required this.article});

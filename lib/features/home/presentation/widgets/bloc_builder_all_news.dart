@@ -19,7 +19,7 @@ class BlocBuilderAllNews extends StatelessWidget {
           return CircularProgressIndicator(color: AppColors.primaryColors);
         } else if (state is AllNewsSuccess) {
           final articleList = state.articlesList;
-          return NewsItemList(article: articleList);
+          return NewsItemList(article: articleList,);
         } else if (state is AllNewsFailure) {
           return Center(child: Text(state.message));
         }else{
