@@ -4,6 +4,8 @@ import 'package:news_app/core/data_source/news_remote_data_source.dart';
 import 'package:news_app/features/auth/data/data_sources/fire_base_auth_services.dart';
 import 'package:news_app/features/auth/data/repos/auth_repository_impl.dart';
 import 'package:news_app/features/auth/domain/repos/auth_repository.dart';
+import 'package:news_app/features/explore/data/repo/explore_repo_impl.dart';
+import 'package:news_app/features/explore/domain/repo/explore_repo.dart';
 import 'package:news_app/features/home/data/datasources/home_remote_data_source.dart';
 import 'package:news_app/features/home/data/repo/news_repository_impl.dart';
 import 'package:news_app/features/home/domain/repo/news_repository.dart';
@@ -37,5 +39,11 @@ sutupServiceLocator() {
   getIt.registerLazySingleton<SearchRepo>(
     () =>
         SearchRepoImpl(newsRemoteDataSource: getIt.get<NewsRemoteDataSource>()),
+  );
+
+  getIt.registerLazySingleton<ExploreRepo>(
+    () => ExploreRepoImpl(
+      newsRemoteDataSource: getIt.get<NewsRemoteDataSource>(),
+    ),
   );
 }
