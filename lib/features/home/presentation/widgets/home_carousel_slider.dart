@@ -46,9 +46,8 @@ class _HomeCarouselSliderState extends State<HomeCarouselSlider> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.of(context,rootNavigator: true).pushNamed(
-                          
-                          AppRoutes.detailsView,
+                        Navigator.of(context, rootNavigator: true).pushNamed(
+                          AppRoutes.articleDetailsView,
                           arguments: widget.articleEntity[index],
                         );
                       },
@@ -59,7 +58,9 @@ class _HomeCarouselSliderState extends State<HomeCarouselSlider> {
                         placeholder: (context, url) => Container(
                           color: Colors.grey[200],
                           child: const Center(
-                            child: CircularProgressIndicator(color: AppColors.primaryColors),
+                            child: CircularProgressIndicator(
+                              color: AppColors.primaryColors,
+                            ),
                           ),
                         ),
                         errorWidget: (context, url, error) => Image.asset(

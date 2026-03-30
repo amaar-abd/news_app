@@ -10,6 +10,7 @@ class SearchCubit extends Cubit<SearchState> {
 
   final SearchRepo searchRepo;
   Future<void> searchNews({required String query}) async {
+    emit(SearchLoading());
     final result = await searchRepo.getNewsByQuery(query: query);
     result.fold(
       (failure) => emit(SearchFailure(failure.message)),

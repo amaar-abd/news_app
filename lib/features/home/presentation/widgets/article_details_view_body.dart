@@ -5,8 +5,8 @@ import 'package:news_app/core/utils/app_iamges.dart';
 import 'package:news_app/core/entites/article_entity.dart';
 import 'package:news_app/features/home/presentation/widgets/custom_details_appbar.dart';
 
-class DetailsViewBody extends StatelessWidget {
-  const DetailsViewBody({super.key, required this.article});
+class ArticleDetailsViewBody extends StatelessWidget {
+  const ArticleDetailsViewBody({super.key, required this.article});
   final ArticleEntity article;
   @override
   Widget build(BuildContext context) {

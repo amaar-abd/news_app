@@ -10,8 +10,7 @@ class BlocBuilderSearchResults extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).height * .5,
-      width: double.infinity,
+      height: MediaQuery.of(context).size.height * .5,
       child: BlocBuilder<SearchCubit, SearchState>(
         buildWhen: (previous, current) =>
             current is SearchLoading ||
@@ -19,17 +18,18 @@ class BlocBuilderSearchResults extends StatelessWidget {
             current is SearchFailure,
         builder: (context, state) {
           if (state is SearchLoading) {
-            return CircularProgressIndicator(color: AppColors.primaryColors);
+            return Center(
+              child: SizedBox(
+                height: 60,
+                width: 60,
+                child: CircularProgressIndicator(
+                  color: AppColors.primaryColors,
+                ),
+              ),
+            );
           } else if (state is SearchSuccess) {
             final articleList = state.articles;
-            return Column(
-              children: [
-                
-                NewsItemList(
-                  article: articleList,
-                ),
-              ],
-            );
+            return NewsItemList(article: articleList);
           } else if (state is SearchFailure) {
             return Center(child: Text(state.message));
           } else {
