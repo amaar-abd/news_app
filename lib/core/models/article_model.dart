@@ -1,17 +1,27 @@
+import 'package:hive/hive.dart';
 import 'package:news_app/core/models/source_model.dart';
 import 'package:news_app/core/entites/article_entity.dart';
 
-class ArticleModel {
-  final Source? source;
-  final String? title;
-  final String? description;
-  final String? urlToImage;
-  final String? publishedAt;
-  final String? author;
+part 'article_model.g.dart';
 
+@HiveType(typeId: 0)
+class ArticleModel extends HiveObject {
+  @HiveField(0)
+  final Source? source;
+  @HiveField(1)
+  final String? title;
+  @HiveField(2)
+  final String? description;
+  @HiveField(3)
+  final String? urlToImage;
+  @HiveField(4)
+  final String? publishedAt;
+  @HiveField(5)
+  final String? author;
+  @HiveField(6)
   final String? content;
 
-  const ArticleModel(
+  ArticleModel(
     this.source,
     this.title,
     this.description,
@@ -30,6 +40,18 @@ class ArticleModel {
       json['publishedAt'],
       json['content'],
       json['author'],
+    );
+  }
+  
+  factory ArticleModel.fromEntity(ArticleEntity entity) {
+    return ArticleModel(
+     entity.source,
+      entity.title,
+      entity.description,
+      entity.urlToImage,
+      entity.publishedAt,
+      entity.content,
+      entity.author
     );
   }
 
