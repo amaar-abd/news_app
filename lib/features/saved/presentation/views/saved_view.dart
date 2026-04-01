@@ -1,10 +1,10 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:news_app/features/saved/presentation/widgets/saved_view_body.dart';
 
 class SavedView extends StatelessWidget {
   const SavedView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
+    return Scaffold(body: SafeArea(child: SavedViewBody() ));
+}}
