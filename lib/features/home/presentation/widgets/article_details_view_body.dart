@@ -31,7 +31,7 @@ class ArticleDetailsViewBody extends StatelessWidget {
           right: 0,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: CustomDetailsAppbar(),
+            child: CustomDetailsAppbar(article: article,),
           ),
         ),
         Positioned(

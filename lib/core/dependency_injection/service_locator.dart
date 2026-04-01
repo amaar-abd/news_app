@@ -9,6 +9,7 @@ import 'package:news_app/features/explore/domain/repo/explore_repo.dart';
 import 'package:news_app/features/home/data/datasources/home_remote_data_source.dart';
 import 'package:news_app/features/home/data/repo/news_repository_impl.dart';
 import 'package:news_app/features/home/domain/repo/news_repository.dart';
+import 'package:news_app/features/saved/presentation/manager/article_saved_cubit/saved_article_cubit.dart';
 import 'package:news_app/features/search/data/repo/search_repo_impl.dart';
 import 'package:news_app/features/search/domain/search_repo.dart';
 
@@ -46,4 +47,6 @@ sutupServiceLocator() {
       newsRemoteDataSource: getIt.get<NewsRemoteDataSource>(),
     ),
   );
+
+  getIt.registerLazySingleton<SavedArticleCubit>(() => SavedArticleCubit());
 }
