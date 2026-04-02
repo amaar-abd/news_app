@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/features/profile/presentation/widgets/profile_view_body.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(body: SafeArea(child: ProfileViewBody()));
   }
 }
