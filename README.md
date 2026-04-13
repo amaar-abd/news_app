@@ -2,6 +2,33 @@
 
 A professional Flutter news application demonstrating an advanced implementation of **Clean Architecture** (Data, Domain, Presentation) combined with real-time API integration and local data persistence.
 
+## 📸 App Screenshots
+
+### 🏁 Startup 
+| Splash Screen | Onboarding 1 | Onboarding 2 |
+| :-: | :-: | :-: |
+| <img src="screenshots/splash.jpg" width="250"> | <img src="screenshots/onboarding_1.jpg" width="250"> | <img src="screenshots/onboarding_2.jpg" width="250"> |
+
+### 🔐 Authentication & Access
+| Login Screen | Register Screen |
+| :-: | :-: |
+| <img src="screenshots/login.jpg" width="260"> | <img src="screenshots/signup.jpg" width="260"> |
+
+### 📰 Main Features
+| Home Feed | News Details | Search | Search Results |
+| :-: | :-: | :-: | :-: |
+| <img src="screenshots/home.jpg" width="250"> | <img src="screenshots/news_details.jpg" width="250"> | <img src="screenshots/search.jpg" width="250"> | <img src="screenshots/search_results.jpg" width="250"> |
+
+### 🧭 Explore & Categories
+| Explore | Category | 
+| :-: | :-: |
+| <img src="screenshots/explore.jpg" width="250"> | <img src="screenshots/category_news.jpg" width="250"> |
+
+### 👤 User Space
+| Bookmarks | Profile |
+| :-: | :-: |
+| <img src="screenshots/saved_news.jpg" width="250"> | <img src="screenshots/profile.jpg" width="250"> |
+
 ## 🛠 Technical Implementation
 This project was built to showcase industry-standard Flutter development patterns and high-quality code structure:
 
